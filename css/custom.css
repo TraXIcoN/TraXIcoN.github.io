@@ -1,28 +1,12 @@
 body {
   height: 100%;
 }
+.page-wrapper-overflow {
+  overflow-x: hidden;
+  position: absolute;
+}
 .intro {
   white-space: nowrap;
-}
-.p-text {
-  text-shadow: 0 0 10px white;
-  position: relative;
-  &::after,
-  &::before {
-    content: attr(data-text);
-    position: absolute;
-    left: 3px;
-    text-shadow: none;
-    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3DPAzwJxrwCre%2Fgiphy.gif&f=1&nofb=1&ipt=dc4dd2260b9ccecc06fc391c3c781a47f6dd210b6e9d1d80c61beb36b618cdc9&ipo=images);
-    background-clip: text;
-    color: transparent;
-    mix-blend-mode: lighten;
-    pointer-events: none;
-  }
-  &::before {
-    left: -3px;
-    mix-blend-mode: lighten;
-  }
 }
 .vertical-rectangle {
   position: absolute;
@@ -34,7 +18,7 @@ body {
   width: 50%; /* Adjust the width as needed */
   background-color: rgb(232, 182, 182); /* Adjust the color as needed */
   z-index: -10;
-  height: 500%;
+  /* height: 500%; */
   opacity: 0.4;
 }
 .vertical-rectangle1 {
@@ -42,12 +26,12 @@ body {
   rotate: -45deg;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 0;
   transform: translateX(-50%);
   width: 50%; /* Adjust the width as needed */
   background-color: rgb(232, 182, 182); /* Adjust the color as needed */
   z-index: -10;
-  height: 800%;
+  /* height: 800%; */
   opacity: 0.4;
 }
 

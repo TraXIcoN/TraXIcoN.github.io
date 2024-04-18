@@ -4,6 +4,26 @@ body {
 .intro {
   white-space: nowrap;
 }
+.p-text {
+  text-shadow: 0 0 10px white;
+  position: relative;
+  &::after,
+  &::before {
+    content: attr(data-text);
+    position: absolute;
+    left: 3px;
+    text-shadow: none;
+    background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3DPAzwJxrwCre%2Fgiphy.gif&f=1&nofb=1&ipt=dc4dd2260b9ccecc06fc391c3c781a47f6dd210b6e9d1d80c61beb36b618cdc9&ipo=images);
+    background-clip: text;
+    color: transparent;
+    mix-blend-mode: lighten;
+    pointer-events: none;
+  }
+  &::before {
+    left: -3px;
+    mix-blend-mode: lighten;
+  }
+}
 .vertical-rectangle {
   position: absolute;
   rotate: 45deg;
@@ -109,7 +129,7 @@ body {
 .c {
   position: relative;
   width: 90vmin;
-  height: calc(90vmin * 9 / 16);
+  /* height: calc(90vmin * 9 / 16); */
   margin: auto;
   overflow: hidden;
   /* box-shadow: 0 1.25em 1em -0.5em #0005; */

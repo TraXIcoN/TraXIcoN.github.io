@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
+    <meta name="description" content="Explore Aditya Mohan's portfolio, showcasing his expertise in full-stack development, data engineering, and innovative projects. As a Computer Science graduate student at Georgia State University, Aditya offers a strong background in software development and tech solutions. View his detailed experience, skills, and achievements, and download his resume. Perfect for recruiters seeking top talent in the tech industry."/>
     <meta name="Aditya Mohan" content="" />
     <title>Aditya Mohan's Portfolio</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
@@ -33,13 +33,25 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
     />
     <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/experience.css" rel="stylesheet" />
+    <link href="css/project.css" rel="stylesheet" />
   </head>
 
   <body id="page-top">
-    <div class="page-wrapper-overflow">
-    <div class="vertical-rectangle"></div>
-    <div class="vertical-rectangle1"></div>
-    <!-- Navigation-->
+    <div id="loading-screen">
+      <div class="pencil">
+        <div class="pencil__ball-point"></div>
+        <div class="pencil__cap"></div>
+        <div class="pencil__cap-base"></div>
+        <div class="pencil__middle"></div>
+        <div class="pencil__eraser"></div>
+      </div>
+      <div class="line"></div>
+      <h2>Hold tight, magic is happening...</h2>
+    </div>
+    <div id="main-content" style="display: none;">
+      <div class="page-wrapper-overflow"></div>
+      <!-- Navigation-->
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top"
       id="sideNav"
@@ -50,7 +62,7 @@
           ><img
             class="img-fluid img-profile rounded-circle mx-auto mb-2"
             src="assets/img/Aditya.png"
-            alt="..."
+            alt="Aditya Mohan Profile Picture"
         /></span>
       </a>
       <button
@@ -150,89 +162,131 @@
       <hr class="m-0" />
       <!-- Experience-->
       <section class="resume-section" id="experience">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Experience</h2>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-          <div class="flex-grow-1">
-            <h3 class="mb-0">Research Collaborator</h3>
-            <div class="subheading mb-3">Academic research under Dr. Haoxin Wang</div>
-            <p>
-                Directed the creation of AR-enabled 3D models compatible with Microsoft HoloLens 2 at GSU’s Advanced Mobility and Augmented Intelligence (AMAI) lab. Mentored students in computer science to develop blockchain-based voting system.
-            </p>
-        </div>
-        <div class="flex-shrink-0">
-            <span class="text-danger">September 2023 -- Present</span>
-        </div>
-        </div>
-        <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-
-        <div class="flex-grow-1">
-            <h3 class="mb-0">Senior Data Engineer</h3>
-            <div class="subheading mb-3">Larsen & Toubro Infotech (LTI)</div>
-            <p>
-                Created Git workflows, developed data pipelines in Azure and performed database migration from Oracle SQL to Databricks for P&G Poland.
-Utilized Snowflake and Tableau to streamline data processing and create interactive dashboards, enhancing data-driven decision-making for optimizing business strategies.
-Performed testing using Playwright that covers key features, user interactions, and edge cases, ensuring all the critical paths and error handling are thoroughly tested.
-            </p>
-        </div>
-        <div class="flex-shrink-0">
-            <span class="text-danger">June 2022 -- July 2023</span>
-        </div>
-        </div>
-        <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-
-        <div class="flex-grow-1">
-            <h3 class="mb-0">Intern, Full-Stack-Developer</h3>
-            <div class="subheading mb-3">Codes & Coffee Tech</div>
-            <p>
-                Led full-stack development, integrating APIs with Flutter & JavaScript for an online delivery system, while independently constructing APIs with Postman and Node.js for another project.
-            </p>
-        </div>
-        <div class="flex-shrink-0">
-            <span class="text-danger">February 2022 - May 2022</span>
-        </div>
-        </div>
-        <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-
-        <div class="flex-grow-1">
-            <h3 class="mb-0">Intern, Backend Developer</h3>
-            <div class="subheading mb-3">AutoDL</div>
-            <p>
-                Developed functionalities like email verification and password-reset system along with minor bug fixes and essential code snippets including unit tests in PyTest.
-            </p>
-        </div>
-        <div class="flex-shrink-0">
-            <span class="text-danger">June 2021 - August 2021</span>
-        </div>
-        </div>
-        <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-
-        <div class="flex-grow-1">
-            <h3 class="mb-0">Intern, Security Intern</h3>
-            <div class="subheading mb-3">Reliance Industries Limited</div>
-            <p>
-                Deployed machine learning algorithms to detect anomalies and suspicious users in web server and firewall logs, bolstering cybersecurity at RIL's cyber defense center. Conducted penetration tests at multiple retail stores using tools like Wireshark, Nmap, and Metasploit.
-            </p>
-        </div>
-        <div class="flex-shrink-0">
-            <span class="text-danger">May 2021 - September 2021</span>
-        </div>
-        </div>
-        <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-
-
+        <div class="container-fluid blue-bg position-relative">
+          <button class="btn btn-custom position-absolute top-0 end-0 m-3"><a style="text-decoration: none; color: bisque;" href="https://drive.google.com/file/d/1nFDMRJQp1Ux92vljv0hvKTymaz_FX1wP/view?usp=sharing">View Resume!</a></button>
+          <div class="container">
+            <h2 class="pb-3 pt-2">Experience In A Timeline</h2>
+            <!--first section-->
+            <div class="row align-items-center how-it-works">
+              <div class="col-2 text-center bottom">
+                <div class="circle">1</div>
+              </div>
+              <div class="col-6">
+                <h5>Headstarter AI(Fellowship)</h5>
+                <p>SOFTWARE ENGINEER FELLOW</p>
+              </div>
+            </div>
+            <!--path between 1-2-->
+            <div class="row timeline">
+              <div class="col-2">
+                <div class="corner top-right"></div>
+              </div>
+              <div class="col-8">
+                <hr class="animated-path"/>
+              </div>
+              <div class="col-2">
+                <div class="corner left-bottom"></div>
+              </div>
+            </div>
+            <!--second section-->
+            <div class="row align-items-center justify-content-end how-it-works">
+              <div class="col-6 text-right">
+                <h5>All in Dating Inc</h5>
+                <p>INTERN, FULL STACK DEVELOPER</p>
+              </div>
+              <div class="col-2 text-center full">
+                <div class="circle">2</div>
+              </div>
+            </div>
+            <!--path between 2-3-->
+            <div class="row timeline">
+              <div class="col-2">
+                <div class="corner right-bottom"></div>
+              </div>
+              <div class="col-8">
+                <hr class="animated-path"/>
+              </div>
+              <div class="col-2">
+                <div class="corner top-left"></div>
+              </div>
+            </div>
+            <!--third section-->
+            <div class="row align-items-center how-it-works">
+              <div class="col-2 text-center top">
+                <div class="circle">3</div>
+              </div>
+              <div class="col-6">
+                <h5>LTIMindtree</h5>
+                <p>SENIOR DATA ENGINEER</p>
+              </div>
+            </div>
+            <!--path between 3-4-->
+            <div class="row timeline">
+              <div class="col-2">
+                <div class="corner top-right"></div>
+              </div>
+              <div class="col-8">
+                <hr class="animated-path"/>
+              </div>
+              <div class="col-2">
+                <div class="corner left-bottom"></div>
+              </div>
+            </div>
+            <!--fourth section-->
+            <div class="row align-items-center justify-content-end how-it-works">
+              <div class="col-6 text-right">
+                <h5>Codes & Coffee Tech</h5>
+                <p>INTERN, FULL-STACK-DEVELOPER</p>
+              </div>
+              <div class="col-2 text-center full">
+                <div class="circle">4</div>
+              </div>
+            </div>
+            <!--path between 4-5-->
+            <div class="row timeline">
+              <div class="col-2">
+                <div class="corner right-bottom"></div>
+              </div>
+              <div class="col-8">
+                <hr class="animated-path"/>
+              </div>
+              <div class="col-2">
+                <div class="corner top-left"></div>
+              </div>
+            </div>
+            <!--fifth section-->
+            <div class="row align-items-center how-it-works">
+              <div class="col-2 text-center top">
+                <div class="circle">5</div>
+              </div>
+              <div class="col-6">
+                <h5>AUTODL</h5>
+                <P>INTERN, BACKEND DEVELOPER</P>
+              </div>
+            </div>
+            <!--path between 5-6-->
+            <div class="row timeline">
+              <div class="col-2">
+                <div class="corner top-right"></div>
+              </div>
+              <div class="col-8">
+                <hr class="animated-path"/>
+              </div>
+              <div class="col-2">
+                <div class="corner left-bottom"></div>
+              </div>
+            </div>
+            <!--sixth section-->
+            <div class="row align-items-center justify-content-end how-it-works">
+              <div class="col-6 text-right">
+                <h5>Reliance Industries Limited</h5>
+                <p>INTERN, CYBERSECURITY INTERN</p>
+              </div>
+              <div class="col-2 text-center full">
+                <div class="circle">6</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <hr class="m-0" />
@@ -244,9 +298,9 @@ Performed testing using Playwright that covers key features, user interactions, 
             class="d-flex flex-column flex-md-row justify-content-between mb-5"
           >
           <div class="flex-grow-1">
-            <h3 class="mb-0">Drafting Resume using ChatGPT</h3>
+            <h3 class="mb-0">BIttorent CLient</h3>
             <div class="subheading mb-3">
-                Python, make, GPT, Latex, Tkinter, Git
+                Python, HTTP & UDP, Bittorent specifications, Upnp, Cross-platform, Git
             </div>
             <div>
                 Implemented a resume builder with OpenAI's GPT, converting informal inputs into formal job descriptions, easing content formulation for students. Enhanced with customizable templates for straightforward usage.
@@ -310,8 +364,15 @@ Mitigated high server CPU load by implementing late initialization and convertin
         </div>
 
         </div>
+        <div class="github-link">
+          <a href="https://github.com/TraXIcoN" target="_blank">
+            <span class="github-text">Go to GitHub</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </section>
       <hr class="m-0" />
+
       <!-- Education-->
       <section class="resume-section" id="education">
         <div class="resume-section-content">
@@ -355,38 +416,38 @@ Mitigated high server CPU load by implementing late initialization and convertin
             <!-- <h2 class="mb-5">Skills</h2> -->
             <div class="subheading mb-3">Programming Languages</div>
         <ul class="list-inline dev-icons">
-            <li class="list-inline-item" title="React"><i class="fab fa-react"></i></li>
-            <li class="list-inline-item" title="Nodejs"><i class="fab fa-node-js"></i></li>
-            <li class="list-inline-item" title="npm"><i class="fab fa-npm"></i></li>
-            <li class="list-inline-item" title="Python"><i class="fab fa-python"></i></li>
-            <li class="list-inline-item" title="C"><i class="devicon-c-plain"></i></li>
-            <li class="list-inline-item" title="HTML5"><i class="devicon-html5-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="JavaScript"><i class="devicon-javascript-plain"></i></li>
-            <li class="list-inline-item" title="PHP"><i class="devicon-php-plain"></i></li>
-            <li class="list-inline-item" title="Java"><i class="fab fa-java"></i></li> <!-- Java -->
-            <li class="list-inline-item" title="Shell"><i class="fas fa-terminal"></i></li> <!-- Shell -->
+            <li class="list-inline-item techstack" title="React"><i class="fab fa-react"></i></li>
+            <li class="list-inline-item techstack" title="Nodejs"><i class="fab fa-node-js"></i></li>
+            <li class="list-inline-item techstack" title="npm"><i class="fab fa-npm"></i></li>
+            <li class="list-inline-item techstack" title="Python"><i class="fab fa-python"></i></li>
+            <li class="list-inline-item techstack" title="C"><i class="devicon-c-plain"></i></li>
+            <li class="list-inline-item techstack" title="HTML5"><i class="devicon-html5-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="JavaScript"><i class="devicon-javascript-plain"></i></li>
+            <li class="list-inline-item techstack" title="PHP"><i class="devicon-php-plain"></i></li>
+            <li class="list-inline-item techstack" title="Java"><i class="fab fa-java"></i></li> <!-- Java -->
+            <li class="list-inline-item techstack" title="Shell"><i class="fas fa-terminal"></i></li> <!-- Shell -->
         </ul>
         <div class="subheading mb-3">Software, Framework</div>
         <ul class="list-inline dev-icons">
-            <li class="list-inline-item" title="Django"><i class="devicon-django-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="Node.js on Linux"><i class="devicon-nodejs-plain-wordmark devicon-linux-plain"></i></li>
-            <li class="list-inline-item" title="MySQL"><i class="devicon-mysql-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="MongoDB"><i class="devicon-mongodb-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="Git"><i class="devicon-git-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="Node.js"><i class="devicon-nodejs-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="Pandas"><i class="devicon-pandas-original-wordmark"></i></li>
-            <li class="list-inline-item" title="NumPy"><i class="devicon-numpy-original-wordmark"></i></li>
-            <li class="list-inline-item" title="Flask"><i class="devicon-flask-original-wordmark"></i></li>
-            <li class="list-inline-item" title="Angular"><i class="fab fa-angular"></i></li> <!-- Angular -->
+            <li class="list-inline-item techstack" title="Django"><i class="devicon-django-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Node.js on Linux"><i class="devicon-nodejs-plain-wordmark devicon-linux-plain"></i></li>
+            <li class="list-inline-item techstack" title="MySQL"><i class="devicon-mysql-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="MongoDB"><i class="devicon-mongodb-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Git"><i class="devicon-git-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Node.js"><i class="devicon-nodejs-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Pandas"><i class="devicon-pandas-original-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="NumPy"><i class="devicon-numpy-original-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Flask"><i class="devicon-flask-original-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Angular"><i class="fab fa-angular"></i></li> <!-- Angular -->
         </ul>
         <div class="subheading mb-3">Tools</div>
         <ul class="list-inline dev-icons">
-            <li class="list-inline-item" title="Jira"><i class="devicon-jira-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="VS Code"><i class="devicon-vscode-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="Linux"><i class="devicon-linux-plain"></i></li>
-            <li class="list-inline-item" title="Docker"><i class="devicon-docker-plain-wordmark"></i></li>
-            <li class="list-inline-item" title="AR/VR"><i class="fa-solid fa-vr-cardboard"></i></li> <!-- Azure -->
-            <li class="list-inline-item" title="AWS/AZURE"><i class="fa fa-cloud"></i></li> <!-- Brew -->
+            <li class="list-inline-item techstack" title="Jira"><i class="devicon-jira-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="VS Code"><i class="devicon-vscode-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="Linux"><i class="devicon-linux-plain"></i></li>
+            <li class="list-inline-item techstack" title="Docker"><i class="devicon-docker-plain-wordmark"></i></li>
+            <li class="list-inline-item techstack" title="AR/VR"><i class="fa-solid fa-vr-cardboard"></i></li> <!-- Azure -->
+            <li class="list-inline-item techstack" title="AWS/AZURE"><i class="fa fa-cloud"></i></li> <!-- Brew -->
         </ul>
         <ul class="fa-ul mb-0">
             <li>
@@ -399,140 +460,80 @@ Mitigated high server CPU load by implementing late initialization and convertin
 
       </section>
       <hr class="m-0" />
-      <!-- Interests-->
-      <section class="resume-section" id="interests">
-        <div class="resume-section-content">
-            <h2 class="mb-5">About Me</h2>
-            <section class="blockquote-section">
-                <blockquote class="classy-bq"><p>I'm a developer, Musician and bibliophile who has been around the software industry in some capacity since 2017. I am ambitious and driven, fast learner, a people person, hardworking & outrageously creative.</p>
-                </blockquote>
-            </section>
-            <div class="photo-grid">
-                <div class="photo-grid__content">
-                  <div class="col">
-                    <div class="photo-grid__item photo c">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/music.jpg"
-                      >
-                        <img
-                          class=""
-                          src="./assets/img/about/music.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                    </div>
-                    <p class="mb-5">
-                        I find solace in strumming my guitar, losing myself in the melodies I create. Reading is another love of mine; there's nothing quite like getting lost in the pages of a gripping novel.
-                    </p>
-                    <div class="photo-grid__item photo c">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/game.jpg"
-                      >
-                        <img
-                          class=""
-                          src="./assets/img/about/game.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                    </div>
-                    <p class="mb-5">
-                        When it comes to entertainment, I'm drawn to thriller movies with intricate plots that keep me guessing until the end. I'm also an avid Formula 1 enthusiast, eagerly following the twists and turns of each race.
-                    </p>
-                    <div class="photo-grid__item photo c" style="height: auto;">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/netflix.jpg"
-                      >
-                        <img
-                          class="netflix"
-                          src="./assets/img/about/netflix.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                    </div>
-                    <div class="photo-grid__item photo c">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/books.jpg"
-                      >
-                        <img
-                          class=""
-                          src="./assets/img/about/books.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                    </div>
-                  </div>
-                  <div class="col" data-prlx="0 0.075">
-                    <div class="photo-grid__item photo c">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/standup.jpg"
-                      >
-                        <img
-                          class=""
-                          src="./assets/img/about/standup.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                    </div>
-                    <div class="photo-grid__item photo c my-4">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/marines.jpg"
-                      >
-                        <img
-                          class=""
-                          src="./assets/img/about/marines.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                    </div>
-                    <p>
-                        As a developer, I thrive on creating elegant solutions to complex problems. Beyond coding, I'm deeply passionate about various pursuits that enrich my life.
-                    </p>
-                    <div class="photo-grid__item photo c" style="height: auto;">
-                      <div
-                        class="reveal-img dots"
-                        data-src="./assets/img/about/travel.jpg"
-                      >
-                        <img
-                          class=""
-                          src="./assets/img/about/travel.jpg"
-                        />
-                      </div>
-                      <div class="s1"></div>
-                      <div class="s2"></div>
-                      <div class="s3"></div>
-                      <br>
-                      <br>
-                    </div>
-                    <p class="mb-5">
-                        On the field, I enjoy playing cricket, relishing the camaraderie and competition it offers. And of course, I'm always ready to share my heart with furry friends, finding joy in the simple companionship they provide, especially dogs.
-                    </p>
-                  </div>
-                </div>
 
-        </div>
+    <section class="about">
+      <div class="inner">
+        <header class="major">
+          <h2>MY INTERESTS</h2>
+        </header>
+        <blockquote class="classy-bq"><p>I'm a developer, Musician and bibliophile who has been around the software industry in some capacity since 2017. I am ambitious and driven, fast learner, a people person, hardworking &amp; outrageously creative.</p>
+        </blockquote>
+        <ul class="actions">
+          <li><a href="https://www.adityamohan.me" class="button next bloglink">Check out my blog!</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="one" class="tiles">
+      <article>
+        <span class="image">
+          <img style="width: 200%;" src="assets/img/about/game.jpg" alt="Aditya Mohan Playing Video Games" />
+        </span>
+        <header class="major">
+          <h3><a href="#" class="link">Games</a></h3>
+          <p>I love playing games and I am a big fan of Valorant!</p>
+        </header>
+      </article>
+      <article>
+        <span class="image">
+          <img src="assets/img/about/music.jpg" alt="Aditya Mohan Playing Guitar" />
+        </span>
+        <header class="major">
+          <h3><a href="#" class="link">Music</a></h3>
+          <p>I love listening to music and I am a big fan of Rock and Metal!</p>
+        </header>
+      </article>
+      <article>
+        <span class="image">
+          <img src="assets/img/about/books.jpg" alt="Aditya Mohan Reading Books" />
+        </span>
+        <header class="major">
+          <h3><a href="#" class="link">Books</a></h3>
+          <p>I love reading books and I am a big fan of Dan Brown's work!</p>
+        </header>
+      </article>
+      <article>
+        <span class="image">
+          <img src="assets/img/about/standup.jpg" alt="Aditya Mohan Performing Stand-up Comedy" />
+        </span>
+        <header class="major">
+          <h3><a href="#" class="link">Stand-up Comedy</a></h3>
+          <p>Passionate about stand-up comedy, with a particular admiration for comedians like Joe Rogan, Joe List, and Dave Chappelle!</p>
+        </header>
+      </article>
+      <article>
+        <span class="image">
+          <img src="assets/img/about/travel.jpg" alt="Aditya Mohan Traveling" />
+        </span>
+        <header class="major">
+          <h3><a href="#" class="link">Travelling</a></h3>
+          <p>Been travelling the USA and have been to 10+ states already!</p>
+        </header>
+      </article>
+      <article>
+        <span class="image">
+          <img src="assets/img/about/beaches.jpg" alt="Aditya Mohan at the Beach" />
+        </span>
+        <header class="major">
+          <h3><a href="#" class="link">Beaches</a></h3>
+          <p>Beaches are my happy place—I'm basically a professional beach bum!</p>
+        </header>
+      </article>
     </section>
 
       <hr class="m-0" />
       <!-- Acheivements-->
-      <section class="resume-section" id="achievements">
+      <section class="resume-section achievement-section" id="achievements">
         <div class="resume-section-content">
           <h2 class="mb-5">Achievements</h2>
           <ul class="fa-ul mb-0">
@@ -551,7 +552,35 @@ Mitigated high server CPU load by implementing late initialization and convertin
             </li>
           </ul>
         </div>
+        <div class="mobile">
+          <div class="phone">
+            <div class="phone-mirror">
+              <div class="topWrapper">
+                <div class="camera"></div>
+                <div class="line-rec"></div>
+              </div>
+              <img src="../images/oppo.png" alt="oppo" height="535" width="312">
+            </div>
+            <div class="contact-form">
+              <h3>Send me a message!</h3>
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message:</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary"><a style="text-decoration: none;" href="mailto:amohan2@student.gsu.edu?cc=mohanaditya1601@gmail.com&subject=Saw%20your%20portfolio%20online!%20Would%20like%20to%20schedule%20a%20call.&body=May%20the%20Force%20be%20with%20us%20all%3A%0D%0A%0D%0ACheers">Submit</a></button>
+            </div>
+          </div>
+        </div>
       </section>
+      </div>
     </div>
     <!--Custom cursor js-->
     <script type="module">
@@ -559,6 +588,37 @@ Mitigated high server CPU load by implementing late initialization and convertin
 
         new fairyDustCursor();
       </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          setTimeout(function() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+          }, 10000); // 5000 milliseconds = 5 seconds
+        });
+      </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".animated-path").forEach(path => {
+      observer.observe(path);
+    });
+  });
+</script>
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->

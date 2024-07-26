@@ -24,6 +24,7 @@ body {
   border-top: 0 !important;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-bottom: 20px;
 }
 
 .tiles + * {

@@ -1,14 +1,11 @@
-import type { Metadata } from "next";
-import { Inter, Saira_Extra_Condensed } from "next/font/google";
+import { Metadata } from "next";
+import { Saira } from "next/font/google";
+import ClientLayout from "./components/layout/ClientLayout";
 import "./globals.css";
-import Navigation from "./components/layout/Navigation";
-import LoadingScreen from "./components/layout/LoadingScreen";
-import Background from "./components/layout/Background";
 
-const inter = Inter({ subsets: ["latin"] });
-const saira = Saira_Extra_Condensed({
+const saira = Saira({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  display: "swap",
   variable: "--font-saira",
 });
 
@@ -24,17 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body
-        className={`${inter.className} ${saira.variable} relative min-h-screen`}
-      >
-        <div className="relative z-10">
-          <LoadingScreen />
-          <div id="main-content" className="hidden">
-            <Navigation />
-            {children}
-          </div>
-        </div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={saira.variable}>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );

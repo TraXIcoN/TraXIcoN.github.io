@@ -21,8 +21,8 @@ export const Card = ({
       transition={{ duration: 0.5, delay }}
       whileHover={hover ? { scale: 1.02 } : undefined}
       className={`
-        bg-white rounded-lg shadow-lg overflow-hidden
-        ${hover ? "transition-transform duration-200" : ""}
+        bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-purple-100
+        ${hover ? "transition-all duration-200" : ""}
         ${className}
       `}
     >
@@ -37,7 +37,11 @@ export const CardHeader = ({
 }: {
   children: ReactNode;
   className?: string;
-}) => <div className={`px-6 py-4 border-b ${className}`}>{children}</div>;
+}) => (
+  <div className={`px-6 py-4 border-b border-gray-100 ${className}`}>
+    {children}
+  </div>
+);
 
 export const CardBody = ({
   children,
@@ -53,4 +57,4 @@ export const CardFooter = ({
 }: {
   children: ReactNode;
   className?: string;
-}) => <div className={`px-6 py-4 bg-gray-50 ${className}`}>{children}</div>;
+}) => <div className={`px-6 py-4 bg-gray-50/50 ${className}`}>{children}</div>;

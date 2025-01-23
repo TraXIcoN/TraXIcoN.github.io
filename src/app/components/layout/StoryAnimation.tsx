@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import { useTheme } from "../shared/ThemeContext";
 
 interface StoryFrame {
   text: string;
@@ -68,6 +69,7 @@ const storyFrames: StoryFrame[] = [
 const StoryAnimation = () => {
   const [currentFrame, setCurrentFrame] = useState(0);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -88,11 +90,11 @@ const StoryAnimation = () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
-    // Clear canvas
-    ctx.fillStyle = "black";
+    // Clear canvas with theme-appropriate background
+    ctx.fillStyle = theme === "dark" ? "white" : "black";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw root-like background
+    // Draw root-like background with theme-appropriate color
     const drawRoot = (x: number, y: number, angle: number, depth: number) => {
       if (depth <= 0) return;
 
@@ -103,7 +105,10 @@ const StoryAnimation = () => {
       ctx.beginPath();
       ctx.moveTo(x, y);
       ctx.lineTo(endX, endY);
-      ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 + Math.random() * 0.1})`;
+      ctx.strokeStyle =
+        theme === "dark"
+          ? `rgba(255, 255, 255, ${0.1 + Math.random() * 0.1})`
+          : `rgba(0, 0, 0, ${0.1 + Math.random() * 0.1})`;
       ctx.lineWidth = Math.max(0.5, depth * 0.5);
       ctx.stroke();
 
@@ -131,7 +136,8 @@ const StoryAnimation = () => {
       height: number,
       action: string
     ) => {
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
+      ctx.strokeStyle =
+        theme === "dark" ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)";
       ctx.lineWidth = 2;
 
       // Head
@@ -180,19 +186,27 @@ const StoryAnimation = () => {
       const action = Math.random() > 0.5 ? "wave" : "stand";
       drawStickFigure(x, y, height, action);
     }
-  }, [currentFrame]); // Redraw on frame change
+  }, [currentFrame, theme]); // Add theme as dependency
 
   return (
-    <div className="w-full max-w-md">
-      <div className="relative w-full h-[300px] bg-black rounded-xl overflow-hidden">
+    <div className="w-full max-w-md border-[#1a1a1a] shadow-purple-100 dark:shadow-purple-900/20">
+      <div
+        className={`relative w-full h-[300px] ${
+          theme === "dark" ? "bg-white/80" : "bg-[#1a1a1a]/80"
+        } rounded-xl overflow-hidden`}
+      >
         {/* Title */}
         <motion.div
-          className="absolute top-3 left-4 z-20 bg-black/80 px-3 py-1 rounded-md"
+          className={`absolute top-3 left-4 z-20 ${
+            theme === "dark"
+              ? "bg-black/80 text-white/90"
+              : "bg-white/80 text-black/90"
+          } px-3 py-1 rounded-md`}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <span className="text-sm font-medium text-white/90 tracking-wide">
+          <span className="text-sm font-medium tracking-wide">
             Pivotal Moments of Life
           </span>
         </motion.div>
@@ -200,7 +214,11 @@ const StoryAnimation = () => {
         <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 
         {/* TV Static Effect */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none mix-blend-overlay">
+        <div
+          className={`absolute inset-0 opacity-5 pointer-events-none mix-blend-overlay ${
+            theme === "dark" ? "invert" : "invert-0"
+          }`}
+        >
           <div className="w-full h-full bg-[url('/static-noise.gif')]" />
         </div>
 
@@ -220,7 +238,9 @@ const StoryAnimation = () => {
               className="text-center relative z-10"
             >
               <motion.div
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm rounded-xl -z-10"
+                className={`absolute inset-0 ${
+                  theme === "dark" ? "bg-white/80" : "bg-black/80"
+                } backdrop-blur-sm rounded-xl -z-10`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -250,12 +270,20 @@ const StoryAnimation = () => {
 
         {/* TV Frame */}
         <motion.div
-          className="absolute inset-0 border-6 border-gray-800 rounded-xl"
+          className={`absolute inset-0 border-6 ${
+            theme === "dark" ? "border-gray-200" : "border-gray-800"
+          } rounded-xl`}
           animate={{
             boxShadow: [
-              "0 0 15px rgba(255,255,255,0.2)",
-              "0 0 30px rgba(255,255,255,0.4)",
-              "0 0 15px rgba(255,255,255,0.2)",
+              `0 0 15px ${
+                theme === "dark" ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.2)"
+              }`,
+              `0 0 30px ${
+                theme === "dark" ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.4)"
+              }`,
+              `0 0 15px ${
+                theme === "dark" ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.2)"
+              }`,
             ],
           }}
           transition={{ duration: 2, repeat: Infinity }}

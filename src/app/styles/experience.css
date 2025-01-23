@@ -7,7 +7,7 @@
 .timeline-line {
   position: absolute;
   width: 4px;
-  background: #dc2626;
+  background-color: #9333ea; /* Purple-600 */
   top: 0;
   bottom: 0;
   left: 50%;
@@ -30,18 +30,26 @@
 
 .timeline-content {
   padding: 20px;
-  background: white;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(147, 51, 234, 0.1); /* Purple shadow */
   width: 100%;
   max-width: 600px;
+}
+
+.timeline-content:hover {
+  box-shadow: 0 6px 12px rgba(147, 51, 234, 0.15);
+}
+
+.timeline-content.expanded {
+  box-shadow: 0 8px 16px rgba(147, 51, 234, 0.2);
 }
 
 .timeline-number {
   position: absolute;
   width: 40px;
   height: 40px;
-  background: #dc2626;
+  background: #9333ea; /* Purple-600 */
   border-radius: 50%;
   display: flex;
   align-items: center;

@@ -61,8 +61,10 @@ const Interests = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="text-6xl font-bold mb-6 text-black">MY INTERESTS</h2>
-          <blockquote className="text-3xl italic text-gray-700 border-l-4 border-red-500 pl-4 mb-8">
+          <h2 className="text-6xl font-bold mb-6 text-primary dark:text-white">
+            MY INTERESTS
+          </h2>
+          <blockquote className="text-3xl italic text-gray-700 dark:text-gray-300 border-l-4 border-purple-500 pl-4 mb-8">
             I'm a developer, Musician and bibliophile who has been around the
             software industry in some capacity since 2017. I am ambitious and
             driven, fast learner, a people person, hardworking & outrageously
@@ -70,7 +72,9 @@ const Interests = () => {
           </blockquote>
           <a
             href="https://www.adityamohan.me"
-            className="inline-block bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700 transition-colors"
+            className="inline-block bg-purple-600 text-white px-6 py-3 rounded hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Check out my blog!
           </a>
@@ -84,20 +88,24 @@ const Interests = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="relative overflow-hidden rounded-lg shadow-lg group"
+              className="relative overflow-hidden rounded-lg shadow-lg group bg-white dark:bg-gray-800 hover:shadow-purple-100 dark:hover:shadow-purple-900/20"
             >
               <div className="relative h-64">
                 <Image
                   src={interest.image}
                   alt={interest.imageAlt}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform group-hover:scale-110 duration-300"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-50 transition-opacity group-hover:bg-opacity-30" />
+                <div className="absolute inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 transition-opacity group-hover:bg-opacity-30 dark:group-hover:bg-opacity-50" />
               </div>
-              <div className="absolute inset-0 flex flex-col justify-end p-6 text-white">
-                <h3 className="text-4xl font-bold mb-2">{interest.title}</h3>
-                <p className="text-xl">{interest.description}</p>
+              <div className="absolute inset-0 flex flex-col justify-end p-6">
+                <h3 className="text-4xl font-bold mb-2 text-white">
+                  {interest.title}
+                </h3>
+                <p className="text-xl text-gray-100 dark:text-gray-200">
+                  {interest.description}
+                </p>
               </div>
             </motion.div>
           ))}

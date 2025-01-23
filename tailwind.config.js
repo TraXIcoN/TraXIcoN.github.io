@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -12,17 +15,16 @@ module.exports = {
       },
       colors: {
         primary: {
-          50: "#fff1f1",
-          100: "#ffdfdf",
-          200: "#ffc5c5",
-          300: "#ff9d9d",
-          400: "#ff6464",
-          500: "#ff3333",
-          600: "#ed1c1c",
-          700: "#c61212",
-          800: "#a31313",
-          900: "#861717",
-          950: "#480707",
+          50: "#faf5ff",
+          100: "#f3e8ff",
+          200: "#e9d5ff",
+          300: "#d8b4fe",
+          400: "#c084fc",
+          500: "#a855f7",
+          600: "#9333ea",
+          700: "#7e22ce",
+          800: "#6b21a8",
+          900: "#581c87",
         },
       },
       animation: {
@@ -41,6 +43,22 @@ module.exports = {
           "0%": { transform: "translateY(100px)", opacity: "0" },
           "100%": { transform: "translateY(0)", opacity: "1" },
         },
+        "pencil-animation": {
+          "0%": { transform: "rotate(135deg) translateX(0)" },
+          "100%": { transform: "rotate(135deg) translateX(1000px)" },
+        },
+        "line-animation": {
+          "0%": { transform: "scaleX(0)" },
+          "100%": { transform: "scaleX(1)" },
+        },
+      },
+      backgroundColor: {
+        primary: "var(--bg-primary)",
+        secondary: "var(--bg-secondary)",
+      },
+      textColor: {
+        primary: "var(--text-primary)",
+        secondary: "var(--text-secondary)",
       },
     },
   },

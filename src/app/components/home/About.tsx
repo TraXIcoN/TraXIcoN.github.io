@@ -17,16 +17,16 @@ const About = () => {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-8xl font-bold mb-8">
-                <span className="text-black">ADITYA</span>{" "}
-                <span className="text-red-600">MOHAN</span>
+                <span className="text-primary dark:text-white">ADITYA</span>{" "}
+                <span className="text-purple-600">MOHAN</span>
               </h1>
 
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-600 mb-8 text-2xl">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-gray-600 dark:text-gray-300 mb-8 text-2xl">
                 <span>ATLANTA, GA</span>
                 <span>·</span>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-red-600 hover:text-red-700 transition-colors"
+                  className="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -36,14 +36,14 @@ const About = () => {
                 <a
                   href="/resume.pdf"
                   download
-                  className="inline-flex items-center px-4 py-2 border-2 border-red-600 text-red-600 rounded hover:bg-red-600 hover:text-white transition-colors"
+                  className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600"
                 >
                   DOWNLOAD RESUME
                 </a>
               </div>
 
               <motion.p
-                className="text-3xl text-gray-600 mb-8 leading-relaxed max-w-3xl"
+                className="text-3xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-3xl"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}

@@ -31,9 +31,9 @@ const Navigation = () => {
         <div className="flex items-center gap-4">
           {/* Avatar */}
           <motion.div
-            className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-red-600 hover:scale-110 transition-transform"
+            className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-purple-600 dark:border-purple-400 hover:scale-110 transition-transform"
             initial={{ scale: 0 }}
-            animate={{ scale: 1.4 }}
+            animate={{ scale: 1 }}
             transition={{ type: "spring", duration: 0.5 }}
           >
             <Image
@@ -45,14 +45,14 @@ const Navigation = () => {
           </motion.div>
 
           {/* Navigation Bar */}
-          <nav className="bg-black/80 backdrop-blur-sm rounded-full">
+          <nav className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full">
             <div className="px-8 py-4">
               <ul className="flex items-center gap-8">
                 {NAV_ITEMS.map(({ href, label }) => (
                   <li key={href}>
                     <Link
                       href={href}
-                      className="text-2xl text-white hover:text-red-400 transition-colors"
+                      className="text-2xl text-gray-800 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
                     >
                       {label}
                     </Link>

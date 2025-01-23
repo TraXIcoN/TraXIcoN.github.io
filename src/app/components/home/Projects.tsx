@@ -72,9 +72,11 @@ const projects: ProjectProps[] = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-6xl font-bold mb-12 text-black">Projects</h2>
+        <h2 className="text-6xl font-bold mb-12 text-gray-900 dark:text-white">
+          Projects
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
@@ -83,7 +85,7 @@ const Projects = () => {
                 <h3 className="text-4xl font-bold text-black">
                   {project.title}
                 </h3>
-                <p className="text-xl text-gray-500">{project.date}</p>
+                <p className="text-xl text-purple-300">{project.date}</p>
               </CardHeader>
 
               <CardBody>
@@ -91,13 +93,16 @@ const Projects = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-red-100 text-red-600 rounded-full text-lg"
+                      className="px-3 py-1 bg-purple
+                                 text-purple-300 border border-purple-500/50
+                                 rounded-full text-lg font-medium
+                                 hover:bg-purple-200/40 transition-colors duration-200"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <p className="text-2xl text-gray-700">{project.description}</p>
+                <p className="text-2xl text-gray-900">{project.description}</p>
               </CardBody>
 
               <CardFooter className="flex gap-4">
@@ -106,6 +111,8 @@ const Projects = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => window.open(project.github, "_blank")}
+                    className="text-purple-300 border-purple-500 hover:bg-purple-200/30
+                               transition-colors duration-200"
                   >
                     <FaGithub className="mr-2" />
                     View Code
@@ -116,6 +123,8 @@ const Projects = () => {
                     variant="primary"
                     size="sm"
                     onClick={() => window.open(project.demo, "_blank")}
+                    className="bg-purple-600 hover:bg-purple-700 text-white
+                               transition-colors duration-200"
                   >
                     <FaExternalLinkAlt className="mr-2" />
                     Live Demo

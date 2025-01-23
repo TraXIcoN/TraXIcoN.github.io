@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "../shared/ThemeContext";
 import { useEffect, useRef } from "react";
 
 interface Shape {
@@ -14,6 +15,8 @@ interface Shape {
 
 const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationRef = useRef<number>();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -93,7 +96,10 @@ const Background = () => {
       }
 
       ctx.closePath();
-      ctx.strokeStyle = "rgba(239, 68, 68, 0.2)";
+      ctx.strokeStyle =
+        theme === "dark"
+          ? "rgba(147, 51, 234, 0.2)" // Purple for dark mode
+          : "rgba(147, 51, 234, 0.1)"; // Lighter purple for light mode
       ctx.stroke();
       ctx.restore();
     };
@@ -102,7 +108,6 @@ const Background = () => {
       ctx.beginPath();
       ctx.moveTo(x1, y1);
 
-      // Create lightning effect with multiple segments
       let x = x1;
       let y = y1;
       const segments = 5;
@@ -118,13 +123,19 @@ const Background = () => {
       }
 
       ctx.lineTo(x2, y2);
-      ctx.strokeStyle = "rgba(239, 68, 68, 0.1)";
+      ctx.strokeStyle =
+        theme === "dark"
+          ? "rgba(147, 51, 234, 0.2)" // Purple for dark mode
+          : "rgba(147, 51, 234, 0.1)"; // Lighter purple for light mode
       ctx.lineWidth = 0.5;
       ctx.stroke();
     };
 
     const animate = () => {
-      ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
+      ctx.fillStyle =
+        theme === "dark"
+          ? "rgba(0, 0, 0, 0.1)" // Dark background
+          : "rgba(255, 255, 255, 0.1)"; // Light background
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw shapes
@@ -150,18 +161,25 @@ const Background = () => {
         });
       });
 
-      requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
     animate();
 
-    return () => window.removeEventListener("resize", resizeCanvas);
-  }, []);
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      window.removeEventListener("resize", resizeCanvas);
+    };
+  }, [theme]); // Add theme as dependency
 
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-10 bg-gradient-to-br from-white to-gray-100"
+      className={`fixed inset-0 -z-10 transition-colors duration-300 ${
+        theme === "dark" ? "bg-black" : "bg-white"
+      }`}
     />
   );
 };

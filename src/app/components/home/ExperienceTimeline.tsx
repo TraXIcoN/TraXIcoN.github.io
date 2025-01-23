@@ -137,7 +137,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-6xl font-bold text-center mb-16 text-black">
+        <h2 className="text-6xl font-bold text-center mb-16 text-primary dark:text-white">
           Experience In A Timeline
         </h2>
 
@@ -152,7 +152,7 @@ const Experience = () => {
               transition={{ duration: 0.5 }}
             >
               <motion.div
-                className={`timeline-content cursor-pointer ${
+                className={`timeline-content bg-white dark:bg-gray-800 ${
                   expandedCard === exp.number ? "expanded" : ""
                 }`}
                 onClick={() =>
@@ -163,10 +163,10 @@ const Experience = () => {
                 layout
               >
                 <div className="timeline-number text-4xl">{exp.number}</div>
-                <h3 className="timeline-title text-5xl font-bold text-black">
+                <h3 className="text-primary dark:text-white text-5xl font-bold">
                   {exp.company}
                 </h3>
-                <p className="timeline-position text-4xl text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300 text-4xl">
                   {exp.position}
                 </p>
 
@@ -208,17 +208,6 @@ const Experience = () => {
           ))}
           <div className="timeline-line" />
         </div>
-
-        <motion.div className="text-center mt-16" whileHover={{ scale: 1.05 }}>
-          <a
-            href="https://drive.google.com/file/d/1nFDMRJQp1Ux92vljv0hvKTymaz_FX1wP/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors"
-          >
-            View Resume!
-          </a>
-        </motion.div>
       </div>
     </section>
   );

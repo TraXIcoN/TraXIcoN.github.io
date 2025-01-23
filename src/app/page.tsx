@@ -7,11 +7,12 @@ import Interests from "./components/home/Interests";
 import Projects from "./components/home/Projects";
 import Skills from "./components/home/Skills";
 import Background from "./components/layout/Background";
-
+import { ThemeToggle } from "./components/shared/ThemeToggle";
 export default function Home() {
   return (
     <main>
       <Background />
+      <ThemeToggle />
       <About />
       <Experience />
       <Projects />

@@ -9,19 +9,92 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-color: #9333ea;
+  --primary-dark: #7e22ce;
+  --primary-light: #a855f7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark mode colors */
+.dark {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e5;
+}
+
+/* Light mode colors */
+.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4b5563;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Update existing styles to use CSS variables */
+.timeline-content {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.card {
+  background-color: var(--bg-secondary);
+}
+
+/* Update any custom CSS classes that use red colors */
+.timeline-line {
+  background-color: var(--primary-color);
+}
+
+.timeline-number {
+  background-color: var(--primary-color);
+}
+
+.timeline-content:hover {
+  box-shadow: 0 6px 12px rgba(147, 51, 234, 0.15);
+}
+
+.timeline-content.expanded {
+  box-shadow: 0 8px 16px rgba(147, 51, 234, 0.2);
+}
+
+/* Update any hover effects */
+.hover-effect:hover {
+  color: var(--primary-color);
+}
+
+/* Update any animations that use red colors */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary-color);
+  }
+}
+
+/* Update clip path and other custom styles */
+.clip-path-polygon {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 100% 50%);
+}
+
+/* Update any custom scrollbar colors if needed */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f3e8ff;
+}
+
+/* Update selection color */
+::selection {
+  background-color: var(--primary-color);
+  color: white;
 }

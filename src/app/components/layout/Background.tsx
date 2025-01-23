@@ -15,7 +15,7 @@ interface Shape {
 
 const Background = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
   const { theme } = useTheme();
 
   useEffect(() => {
@@ -82,7 +82,11 @@ const Background = () => {
             const angle = (i * 2 * Math.PI) / 5 - Math.PI / 2;
             const x = (shape.size / 2) * Math.cos(angle);
             const y = (shape.size / 2) * Math.sin(angle);
-            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            if (i === 0) {
+              ctx.moveTo(x, y);
+            } else {
+              ctx.lineTo(x, y);
+            }
           }
           break;
         case "hexagon":
@@ -90,7 +94,11 @@ const Background = () => {
             const angle = (i * 2 * Math.PI) / 6;
             const x = (shape.size / 2) * Math.cos(angle);
             const y = (shape.size / 2) * Math.sin(angle);
-            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            if (i === 0) {
+              ctx.moveTo(x, y);
+            } else {
+              ctx.lineTo(x, y);
+            }
           }
           break;
       }

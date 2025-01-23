@@ -26,7 +26,8 @@ const interests: Interest[] = [
   },
   {
     title: "Books",
-    description: "I love reading books and I am a big fan of Dan Brown's work!",
+    description:
+      "I love reading books and I am a big fan of Dan Brown&apos;s work!",
     image: "/assets/img/about/books.jpg",
     imageAlt: "Aditya Mohan Reading Books",
   },
@@ -46,7 +47,7 @@ const interests: Interest[] = [
   {
     title: "Beaches",
     description:
-      "Beaches are my happy place—I'm basically a professional beach bum!",
+      "Beaches are my happy place—I&apos;m basically a professional beach bum!",
     image: "/assets/img/about/beaches.jpg",
     imageAlt: "Aditya Mohan at the Beach",
   },
@@ -65,10 +66,10 @@ const Interests = () => {
             MY INTERESTS
           </h2>
           <blockquote className="text-3xl italic text-gray-700 dark:text-gray-300 border-l-4 border-purple-500 pl-4 mb-8">
-            I'm a developer, Musician and bibliophile who has been around the
-            software industry in some capacity since 2017. I am ambitious and
-            driven, fast learner, a people person, hardworking & outrageously
-            creative.
+            I&apos;m a developer, Musician and bibliophile who has been around
+            the software industry in some capacity since 2017. I am ambitious
+            and driven, fast learner, a people person, hardworking &
+            outrageously creative.
           </blockquote>
           <a
             href="https://www.adityamohan.me"

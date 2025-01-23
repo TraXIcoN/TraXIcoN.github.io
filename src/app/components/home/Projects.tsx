@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Card, CardHeader, CardBody, CardFooter } from "../shared/Card";
 import { Button } from "../shared/Button";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";

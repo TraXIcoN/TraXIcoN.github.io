@@ -15,7 +15,9 @@ export const SocialLinks = () => {
           className="social-icon p-2 text-purple rounded-full hover:bg-purple-100 transition-colors"
           aria-label={label}
         >
-          <Icon className="w-5 h-5 text-purple hover:text-purple-600 transition-colors" />
+          <div className="w-5 h-5 text-purple hover:text-purple-600 transition-colors">
+            <Icon />
+          </div>
         </motion.a>
       ))}
     </div>
@@ -41,6 +43,8 @@ export const SocialLink = ({
     className="social-icon"
     aria-label={label}
   >
-    <Icon className="w-5 h-5" />
+    <div className="w-5 h-5 text-purple hover:text-purple-600 transition-colors">
+      <Icon />
+    </div>
   </motion.a>
 );

@@ -2,22 +2,7 @@
 
 import { motion } from "framer-motion";
 import { IconType } from "react-icons";
-import {
-  FaReact,
-  FaNode,
-  FaPython,
-  FaAws,
-  FaDocker,
-  FaGitAlt,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiMongodb,
-  SiPostgresql,
-  SiTailwindcss,
-  SiRedux,
-  SiNextdotjs,
-} from "react-icons/si";
+import { FaReact, FaNode, FaAws, FaGitAlt } from "react-icons/fa";
 
 interface SkillCategory {
   name: string;

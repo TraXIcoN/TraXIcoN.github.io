@@ -2,10 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Card } from "../shared/Card";
 import { Button } from "../shared/Button";
 import { validateEmail } from "../../lib/utils";
-import { FaCoffee } from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,11 +23,11 @@ const Contact = () => {
 
     setIsSubmitting(true);
     try {
-      // Add your form submission logic here
       await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate API call
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.error("Form submission error:", error); // Added error logging
       setStatus("error");
     }
     setIsSubmitting(false);
@@ -49,7 +47,7 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 gap-24 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-24 mx-auto">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -163,14 +161,14 @@ const Contact = () => {
                      flex flex-col items-center justify-center"
           >
             <h3 className="text-4xl font-bold mb-4 text-white">
-              Let's Grab a Coffee! ☕
+              Let&apos;s Grab a Coffee! ☕
             </h3>
 
             <p className="text-xl text-gray-300 mb-6">
-              Hey there! Let’s skip the endless email threads and chat over
+              Hey there! Let&apos;s skip the endless email threads and chat over
               coffee instead. I know a spot where the brews are strong, the
-              vibes are great, and—if we're lucky—your bugs might just debug
-              themselves.
+              vibes are great, and—if we&apos;re lucky—your bugs might just
+              debug themselves.
               <span className="block mt-2 text-purple-300">
                 (No promises on the bugs, but the coffee? 100% bug-free. 😉)
               </span>
@@ -181,7 +179,7 @@ const Contact = () => {
               size="lg"
               onClick={() =>
                 window.open(
-                  "mailto:your@email.com?subject=Let’s%20Talk%20Tech%20Over%20Coffee"
+                  "mailto:your@email.com?subject=Let's%20Talk%20Tech%20Over%20Coffee"
                 )
               }
               className="bg-purple-600 hover:bg-purple-700 transform hover:scale-105

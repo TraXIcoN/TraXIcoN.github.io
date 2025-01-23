@@ -49,10 +49,10 @@ const About = () => {
                 transition={{ delay: 0.2 }}
               >
                 Driven by a passion for innovation and a keen interest in
-                technology, I'm Aditya Mohan, a Computer Science graduate
+                technology, I&apos;m Aditya Mohan, a Computer Science graduate
                 student at Georgia State University. With a strong foundation in
                 full-stack software development and a track record of leading
-                impactful projects, I'm eager to contribute my skills and
+                impactful projects, I&apos;m eager to contribute my skills and
                 expertise to a dynamic team.
               </motion.p>
 

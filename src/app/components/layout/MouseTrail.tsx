@@ -37,7 +37,6 @@ export default function MouseTrail() {
       // Draw white glow
       ctx.beginPath();
       positionsRef.current.forEach((pos, i) => {
-        const alpha = 1 - pos.age / 50;
         if (i === 0) {
           ctx.moveTo(pos.x, pos.y);
         } else {
@@ -52,7 +51,6 @@ export default function MouseTrail() {
       // Draw purple trail
       ctx.beginPath();
       positionsRef.current.forEach((pos, i) => {
-        const alpha = 1 - pos.age / 50;
         const width = 4 * (1 - i / positionsRef.current.length);
         if (i === 0) {
           ctx.moveTo(pos.x, pos.y);

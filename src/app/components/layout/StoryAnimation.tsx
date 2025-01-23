@@ -9,60 +9,76 @@ interface StoryFrame {
   emoji: string;
   color: string;
   scale?: number;
+  year: string;
 }
 
 const storyFrames: StoryFrame[] = [
-  { text: "Hey Dad, I won the Math Olympiad!", emoji: "🎖️", color: "#FFD700" },
+  {
+    text: "Hey Dad, I won the Math Olympiad!",
+    emoji: "🥇",
+    color: "#FFD700",
+    year: "2016",
+  },
   {
     text: "Hey bro, take a look at my own website!",
     emoji: "💻",
     color: "#00CED1",
+    year: "2017",
   },
   {
     text: "Mom, look! I made Tic-Tac-Toe online!",
     emoji: "🎮",
     color: "#98FB98",
+    year: "2018",
   },
   {
-    text: "Graduated from Bachelor's",
+    text: "Graduated from High School",
     emoji: "🎓",
     color: "#DDA0DD",
+    year: "2020",
   },
   {
-    text: "First Job, Growing in Career",
+    text: "First Internship",
     emoji: "🚀",
     color: "#87CEEB",
+    year: "2021",
   },
   {
     text: "A Profound Heartbreak",
     emoji: "💔",
     color: "#FF69B4",
     scale: 0.9,
+    year: "2022",
   },
   {
     text: "Suddenly Became an Animal Lover",
     emoji: "🐶",
     color: "#F4A460",
+    year: "2022",
   },
   {
     text: "Personality Shift",
     emoji: "🔄",
     color: "#9370DB",
+    year: "2023",
   },
   {
     text: "Flying Off to Masters",
     emoji: "✈️",
     color: "#20B2AA",
+    year: "2024",
   },
   {
     text: "Culture Shock & Traveling",
     emoji: "🌍",
     color: "#FF7F50",
+    year: "2024",
   },
   {
     text: "Here I am, Looking for a Job",
     emoji: "🤝",
     color: "#4169E1",
+    year: "2025",
   },
 ];
 
@@ -107,8 +123,8 @@ const StoryAnimation = () => {
       ctx.lineTo(endX, endY);
       ctx.strokeStyle =
         theme === "dark"
-          ? `rgba(255, 255, 255, ${0.1 + Math.random() * 0.1})`
-          : `rgba(0, 0, 0, ${0.1 + Math.random() * 0.1})`;
+          ? `rgba(0, 0, 0, ${0.1 + Math.random() * 0.1})`
+          : `rgba(255, 255, 255, ${0.1 + Math.random() * 0.1})`;
       ctx.lineWidth = Math.max(0.5, depth * 0.5);
       ctx.stroke();
 
@@ -137,8 +153,10 @@ const StoryAnimation = () => {
       action: string
     ) => {
       ctx.strokeStyle =
-        theme === "dark" ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)";
-      ctx.lineWidth = 2;
+        theme === "dark"
+          ? "rgba(0, 0, 0, 0.6)" // Increased opacity for light theme
+          : "rgba(255, 255, 255, 0.6)"; // Increased opacity for dark theme
+      ctx.lineWidth = 3; // Increased line width
 
       // Head
       ctx.beginPath();
@@ -255,13 +273,15 @@ const StoryAnimation = () => {
                 >
                   {storyFrames[currentFrame].emoji}
                 </motion.div>
-                <motion.div
-                  className="text-2xl font-bold text-shadow-lg"
-                  style={{ color: storyFrames[currentFrame].color }}
-                  animate={{ scale: [1, 1.1, 1] }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  {storyFrames[currentFrame].text}
+                <motion.div className="text-2xl font-bold text-shadow-lg">
+                  <span style={{ color: storyFrames[currentFrame].color }}>
+                    {storyFrames[currentFrame].text}
+                  </span>
+                </motion.div>
+                <motion.div className="text-2xl font-bold text-shadow-lg">
+                  <span className="text-gray-400 mr-2">
+                    {storyFrames[currentFrame].year}
+                  </span>
                 </motion.div>
               </div>
             </motion.div>

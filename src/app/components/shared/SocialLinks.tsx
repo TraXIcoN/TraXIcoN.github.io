@@ -12,10 +12,10 @@ export const SocialLinks = () => {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="social-icon p-2 rounded-full hover:bg-purple-100 transition-colors"
+          className="social-icon p-2 text-purple rounded-full hover:bg-purple-100 transition-colors"
           aria-label={label}
         >
-          <Icon className="w-5 h-5 text-[#1a1a1a] hover:text-purple-600 transition-colors" />
+          <Icon className="w-5 h-5 text-purple hover:text-purple-600 transition-colors" />
         </motion.a>
       ))}
     </div>

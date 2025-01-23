@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Saira } from "next/font/google";
 import ClientLayout from "./components/layout/ClientLayout";
 import "./globals.css";
+import MouseTrail from "./components/layout/MouseTrail";
 
 const saira = Saira({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={saira.variable}>
         <ClientLayout>{children}</ClientLayout>
+        <MouseTrail />
       </body>
     </html>
   );

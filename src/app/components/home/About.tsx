@@ -34,7 +34,7 @@ const About = () => {
                 <span>(404) 784-8960</span>
                 <span>·</span>
                 <a
-                  href="/AdityaMohanRes.pdf"
+                  href="/Aditya_MohanResume.pdf"
                   download
                   className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600"
                 >

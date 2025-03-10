@@ -94,9 +94,28 @@ const experiences: ExperienceItem[] = [
   },
   {
     number: 5,
+    company: "CODES & COFFEE TECH",
+    position: "INTERN, MOBILE APP DEVELOPER",
+    duration: "FEB 2022 - May 2022",
+    description: [
+      "Led the migration from Oracle SQL to Databricks, reducing infrastructure costs by approximately $200K annually",
+      "Optimized ETL pipelines and data schemas, reducing processing time by 40% and query execution by 36%, while improving scalability for high-throughput workloads",
+      "Formulated Git workflows processing 5TB+ of sales data across 100 regions, ensuring 92% pipeline reliability",
+      "Integrated Snowflake with SAP for real-time ETL workflows, optimizing data ingestion and transformation, cutting processing costs by 20%, and accelerating query performance by 35%",
+    ],
+    skills: [
+      { name: "Python", color: "blue" },
+      { name: "Flask", color: "red" },
+      { name: "PostgreSQL", color: "orange" },
+      { name: "Elasticsearch", color: "green" },
+    ],
+  },
+  {
+    number: 6,
     company: "AUTODL",
     position: "INTERN, BACKEND DEVELOPER",
     duration: "Dec 2021 - May 2022",
+    isRight: true,
     description: [
       "Developed RESTful APIs for an ML-based document labeling platform",
       "Optimized API performance, reducing response times by 35%",
@@ -108,25 +127,6 @@ const experiences: ExperienceItem[] = [
       { name: "Flask", color: "red" },
       { name: "PostgreSQL", color: "orange" },
       { name: "Elasticsearch", color: "green" },
-    ],
-  },
-  {
-    number: 6,
-    company: "Reliance Industries Limited",
-    position: "INTERN, CYBERSECURITY INTERN",
-    isRight: true,
-    duration: "May 2021 - Jul 2021",
-    description: [
-      "Conducted penetration testing to identify vulnerabilities in enterprise networks",
-      "Developed automated scripts for security audits using Python",
-      "Assisted in implementing SIEM solutions for threat monitoring",
-      "Performed forensic analysis to detect potential security breaches",
-    ],
-    skills: [
-      { name: "Cybersecurity", color: "black" },
-      { name: "Penetration Testing", color: "red" },
-      { name: "Python", color: "blue" },
-      { name: "SIEM", color: "purple" },
     ],
   },
 ];
@@ -179,10 +179,10 @@ const Experience = () => {
                       transition={{ duration: 0.3 }}
                       className="mt-4"
                     >
-                      <p className="text-2xl text-gray-600 mb-4">
+                      <p className="text-2xl text-white-600 mb-4">
                         {exp.duration}
                       </p>
-                      <ul className="list-disc list-inside mb-4 text-xl text-gray-700">
+                      <ul className="list-disc list-inside mb-4 text-xl text-white-700">
                         {exp.description.map((item, index) => (
                           <li key={index} className="mb-2">
                             {item}

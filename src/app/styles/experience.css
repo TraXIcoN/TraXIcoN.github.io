@@ -2,68 +2,97 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 2rem 0;
 }
 
 .timeline-line {
+  content: "";
   position: absolute;
-  width: 4px;
-  background-color: #9333ea; /* Purple-600 */
+  width: 6px;
+  background-color: #8b5cf6;
   top: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  border-radius: 999px;
 }
 
 .timeline-item {
-  padding: 10px 40px;
+  padding: 1rem;
   position: relative;
   width: 50%;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #8b5cf6;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .timeline-item.left {
   left: 0;
+  padding-right: 3rem;
 }
 
 .timeline-item.right {
   left: 50%;
+  padding-left: 3rem;
+}
+
+.timeline-item.left::after {
+  right: -10px;
+}
+
+.timeline-item.right::after {
+  left: -10px;
 }
 
 .timeline-content {
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(147, 51, 234, 0.1); /* Purple shadow */
-  width: 100%;
-  max-width: 600px;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
-  box-shadow: 0 6px 12px rgba(147, 51, 234, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .timeline-content.expanded {
-  box-shadow: 0 8px 16px rgba(147, 51, 234, 0.2);
+  transform: scale(1.02);
 }
 
 .timeline-number {
   position: absolute;
-  width: 40px;
-  height: 40px;
-  background: #9333ea; /* Purple-600 */
+  top: -1rem;
+  background-color: #8b5cf6;
+  color: white;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   font-weight: bold;
+  z-index: 10;
 }
 
-.timeline-item.left .timeline-number {
-  right: -60px;
+.timeline-item:nth-child(odd) .timeline-number {
+  left: -1rem;
 }
 
-.timeline-item.right .timeline-number {
-  left: -60px;
+.timeline-item:nth-child(even) .timeline-number {
+  right: -1rem;
 }
 
 .timeline-title,
@@ -103,6 +132,26 @@
   left: 0;
 }
 
+/* Add tap indicator styles */
+.tap-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem 1rem;
+  background-color: rgba(139, 92, 246, 0.9);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 500;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.timeline-content:hover .tap-indicator {
+  opacity: 1;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .timeline-line {
@@ -120,13 +169,72 @@
     padding-right: 0;
   }
 
-  .timeline-item.left .timeline-number,
-  .timeline-item.right .timeline-number {
+  .timeline-item:nth-child(odd) .timeline-number,
+  .timeline-item:nth-child(even) .timeline-number {
     left: -60px;
+    right: auto;
   }
 
   .timeline-item.left::before,
   .timeline-item.right::before {
     left: 0;
+  }
+}
+
+.timeline-end-section {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.timeline-end-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #8b5cf6, transparent);
+  animation: pulseGradient 2s ease-in-out infinite;
+}
+
+.timeline-end-section > div {
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  backdrop-filter: blur(8px);
+}
+
+@keyframes pulseGradient {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .timeline-end-section {
+    padding: 1rem;
+  }
+
+  .timeline-end-section > div {
+    width: 100%;
+  }
+
+  .timeline-end-section::before {
+    left: 40px;
   }
 }

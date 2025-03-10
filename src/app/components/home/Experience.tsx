@@ -7,7 +7,6 @@ import { HandRaisedIcon } from "@heroicons/react/24/outline";
 import {
   UserGroupIcon,
   AcademicCapIcon,
-  HeartIcon,
   LightBulbIcon,
   PresentationChartBarIcon,
 } from "@heroicons/react/24/outline";

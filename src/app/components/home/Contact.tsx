@@ -27,7 +27,7 @@ const Contact = () => {
       setStatus("success");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("Form submission error:", error); // Added error logging
+      console.error("Form submission error:", error);
       setStatus("error");
     }
     setIsSubmitting(false);
@@ -41,8 +41,10 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="text-6xl font-bold mb-6 text-white">Get In Touch</h2>
-          <p className="text-2xl text-gray-300">
+          <h2 className="text-6xl font-bold mb-6 text-gray-900 dark:text-white">
+            Get In Touch
+          </h2>
+          <p className="text-2xl text-gray-600 dark:text-gray-300">
             Have a question or want to work together?
           </p>
         </motion.div>
@@ -53,7 +55,7 @@ const Contact = () => {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="bg-black/50 p-8 rounded-xl border border-purple-500/20 backdrop-blur-sm"
+            className="bg-white/5 dark:bg-black/50 p-8 rounded-xl border border-purple-500/20 backdrop-blur-sm"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -134,7 +136,7 @@ const Contact = () => {
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-green-600 text-center"
+                  className="text-green-600 dark:text-green-400 text-center"
                 >
                   Message sent successfully!
                 </motion.p>
@@ -144,7 +146,7 @@ const Contact = () => {
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  className="text-red-600 text-center"
+                  className="text-red-600 dark:text-red-400 text-center"
                 >
                   Something went wrong. Please try again.
                 </motion.p>
@@ -157,19 +159,19 @@ const Contact = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-black/50 p-8 rounded-xl backdrop-blur-sm
+            className="bg-white/5 dark:bg-black/50 p-8 rounded-xl backdrop-blur-sm
                      flex flex-col items-center justify-center"
           >
-            <h3 className="text-4xl font-bold mb-4 text-white">
+            <h3 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
               Let&apos;s Grab a Coffee! ☕
             </h3>
 
-            <p className="text-xl text-gray-300 mb-6">
+            <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
               Hey there! Let&apos;s skip the endless email threads and chat over
               coffee instead. I know a spot where the brews are strong, the
               vibes are great, and—if we&apos;re lucky—your bugs might just
               debug themselves.
-              <span className="block mt-2 text-purple-300">
+              <span className="block mt-2 text-purple-600 dark:text-purple-300">
                 (No promises on the bugs, but the coffee? 100% bug-free. 😉)
               </span>
             </p>
@@ -179,7 +181,7 @@ const Contact = () => {
               size="lg"
               onClick={() =>
                 window.open(
-                  "mailto:your@email.com?subject=Let's%20Talk%20Tech%20Over%20Coffee"
+                  "mailto:amohan2@student.gsu.edu?subject=Let's%20Talk%20Tech%20Over%20Coffee"
                 )
               }
               className="bg-purple-600 hover:bg-purple-700 transform hover:scale-105

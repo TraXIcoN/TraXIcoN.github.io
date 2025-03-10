@@ -11,107 +11,150 @@ interface ProjectProps {
   date: string;
   github?: string;
   demo?: string;
+  image?: string;
+  video?: string;
 }
 
 const projects: ProjectProps[] = [
   {
-    title: "AI-Enhanced Game Development with Unity",
+    title: "BlazeGuard - AI First Responder",
     tech: [
-      "Unity",
-      "C#",
-      "AI Language Models",
-      "Microsoft Autogen",
-      "NPC Systems",
-      "Game Development",
+      "Next.js",
+      "Mapbox",
+      "Tailwind CSS",
+      "Supabase",
+      "LiveKit",
+      "Python",
+      "Gemini-2.0",
+      "Google AI",
     ],
     description:
-      "Integrated AI language models in Unity for real-time NPC dialogue based on player inputs and game events. Leveraged Microsoft Autogen to implement human-in-the-loop and multi-agent models for NPC behavior. Incorporated environment-aware modular dialogue generation to enhance gameplay immersion and adaptability.",
+      "Developed BlazeGuard to assist first responders with real-time, voice-driven AI responses during disaster surges. Integrated Gemini-2.0-Flash-Exp and Google text-embedding-004 for medical data retrieval. Built with Next.js, Mapbox & Tailwind, supporting high-volume emergency calls.",
+    date: "January 2025",
+    demo: "https://devpost.com/software/blazeguard",
+    image: "blazeguard.png",
+  },
+  {
+    title: "TheFOMOFund.tech - Your Risk Analyst",
+    tech: [
+      "Next.js",
+      "FastAPI",
+      "AWS",
+      "GPT",
+      "DynamoDB",
+      "Lambda",
+      "EventBridge",
+      "Vercel",
+    ],
+    description:
+      "Developed an AI-driven financial risk platform with real-time forecasting on AWS. Reduced AI costs by 98% using fine-tuned GPT. Built interactive risk dashboard with Next.js & FastAPI, achieving 1,200+ unique visitors in first month.",
     date: "December 2024",
+    demo: "https://thefomofund.tech",
+    image: "fomofundtech.png",
+  },
+  {
+    title: "GrooveChain: AI-Powered Music Generator",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Solidity",
+      "Ethereum",
+      "MetaMask",
+      "SUNO AI",
+      "Meyda",
+      "Pinata",
+    ],
+    description:
+      "Created a Next.js application supporting 500+ audio uploads with real-time AI feedback. Integrated Meyda for audio analysis and SUNO AI for lyric generation. Implemented NFT-based music publishing with Solidity & MetaMask, enabling 100+ concurrent artists.",
+    date: "February 2025",
+    github: "https://github.com/TraXIcoN/AiRockverse",
+    image: "groovechain.png",
   },
   {
     title: "ALPFA Atlanta Job-Matching Platform",
-    tech: ["Django", "React", "Tailwind CSS", "SpaCy", "GPT-4", "Langchain"],
+    tech: ["Django", "React", "SpaCy", "GPT-4", "Langchain", "Morgan Stanley"],
     description:
-      "Won 1st place at the Code-to-Give Hackathon by Morgan Stanley. Developed a job-matching platform leveraging SpaCy for profile parsing, boosting match accuracy by 20%. Created GPT-4/Langchain tool for sponsors to evaluate 100+ resumes in parallel, reducing review time by 30%. Enhanced user engagement by 25% with React frontend.",
+      "Won 1st place at Code-to-Give Hackathon by Morgan Stanley. Developed job-matching platform with SpaCy for profile parsing, boosting match accuracy by 20%. Created GPT-4/Langchain tool for parallel resume evaluation.",
     date: "September 2024",
     github: "https://github.com/TraXIcoN/ALPFAteam3",
+    image: "alpfa.png",
   },
-  {
-    title: "Smart AI Accessibility for Google Meet",
-    tech: [
-      "JavaScript",
-      "Chrome Extension",
-      "MediaPipe",
-      "Deep Learning",
-      "HTTP Services",
-      "Real-time Communication",
-    ],
-    description:
-      "Secured 1st place among 30,000+ teams in Smart India Hackathon 2022. Led development of a JS-based Chrome extension enhancing accessibility for 1,000+ users with disabilities. Integrated AI with MediaPipe achieving 90%+ accuracy in real-time communication. Optimized server CPU usage by 40%.",
-    date: "September 2022",
-    github: "https://github.com/TraXIcoN/SIHCODEFINAL",
-  },
-  {
-    title: "Bittorrent Client",
-    tech: [
-      "Python",
-      "HTTP & UDP",
-      "Bittorent specifications",
-      "Upnp",
-      "Cross-platform",
-      "Git",
-    ],
-    description:
-      "Implemented a resume builder with OpenAI's GPT, converting informal inputs into formal job descriptions...",
-    date: "November 2023",
-    github: "https://github.com/yourusername/bittorrent-client",
-  },
-  // Add other projects...
 ];
 
 const Projects = () => {
   return (
     <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-6xl font-bold mb-12 text-gray-900 dark:text-white">
-          Projects
-        </h2>
+        <h2 className="text-6xl font-bold mb-12 text-white">Projects</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={project.title} delay={index * 0.1}>
-              <CardHeader>
-                <h3 className="text-4xl font-bold text-black">
+            <Card
+              key={project.title}
+              delay={index * 0.1}
+              className="bg-[#ffffff] dark:bg-[#252d3d] overflow-hidden"
+            >
+              {project.image && (
+                <div className="relative h-48 w-full overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="object-cover w-full h-full transform hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
+              {project.video && (
+                <div className="relative h-48 w-full overflow-hidden">
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={project.video}
+                    title={project.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0"
+                  />
+                </div>
+              )}
+              <CardHeader className="bg-[#ffffff] dark:bg-[#252d3d]">
+                <h3 className="text-3xl font-bold text-black dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-xl text-purple-300">{project.date}</p>
+                <p className="text-lg text-purple-300">{project.date}</p>
               </CardHeader>
 
-              <CardBody>
+              <CardBody className="bg-[#ffffff] dark:bg-[#252d3d]">
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-purple
-                                 text-purple-300 border border-purple-500/50
-                                 rounded-full text-lg font-medium
-                                 hover:bg-purple-200/40 transition-colors duration-200"
+                      className="px-3 py-1 bg-purple-900/30
+                               text-purple-300 
+                               border border-purple-500/50
+                               rounded-full text-sm font-medium
+                               hover:bg-purple-800/40 
+                               transition-colors duration-200"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <p className="text-2xl text-gray-900">{project.description}</p>
+                <p className="text-lg text-black-300 dark:text-white">
+                  {project.description}
+                </p>
               </CardBody>
 
-              <CardFooter className="flex gap-4">
+              <CardFooter className="bg-[#ffffff] dark:bg-[#252d3d] flex gap-4">
                 {project.github && (
                   <Button
                     variant="outline"
                     size="sm"
                     onClick={() => window.open(project.github, "_blank")}
-                    className="text-purple-300 border-purple-500 hover:bg-purple-200/30
-                               transition-colors duration-200"
+                    className="text-purple-300 
+                             border-purple-500
+                             hover:bg-purple-900/30
+                             transition-colors duration-200"
                   >
                     <FaGithub className="mr-2" />
                     View Code
@@ -123,7 +166,7 @@ const Projects = () => {
                     size="sm"
                     onClick={() => window.open(project.demo, "_blank")}
                     className="bg-purple-600 hover:bg-purple-700 text-white
-                               transition-colors duration-200"
+                             transition-colors duration-200"
                   >
                     <FaExternalLinkAlt className="mr-2" />
                     Live Demo
@@ -139,6 +182,8 @@ const Projects = () => {
             variant="primary"
             size="lg"
             onClick={() => window.open("https://github.com/TraXIcoN", "_blank")}
+            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3
+                     transition-colors duration-200"
           >
             View More on GitHub
           </Button>

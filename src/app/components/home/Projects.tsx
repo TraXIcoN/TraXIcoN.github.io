@@ -13,9 +13,31 @@ interface ProjectProps {
   demo?: string;
   image?: string;
   video?: string;
+  report?: string;
 }
 
 const projects: ProjectProps[] = [
+  {
+    title: "Masters Project: Quest Forge - Context Aware NPCs",
+    tech: [
+      "Three.js",
+      "Python",
+      "Microsoft Autogen",
+      "OpenAI",
+      "Redis",
+      "MongoDB",
+      "RAG",
+      "Agentic AI",
+      "Node.js",
+      "Websockets",
+    ],
+    description:
+      "Built a context-aware multiplayer game engine with Microsoft AutoGen-powered NPCs, delta-compressed networking (83% bandwidth reduction), and real-time 60FPS Three.js rendering for desktop, mobile, and VR—supporting 30-player parkour mode with precise physics.",
+    date: "May 2025",
+    report:
+      "https://drive.google.com/file/d/1eIsGx68jylgRW_lLvm-xNQ1iRKNC0giD/view?usp=sharing",
+    image: "quest_forge.png",
+  },
   {
     title: "BlazeGuard - AI First Responder",
     tech: [

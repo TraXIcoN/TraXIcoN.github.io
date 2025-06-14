@@ -32,14 +32,6 @@ const About = () => {
                 </a>
                 <span>·</span>
                 <span>(404) 784-8960</span>
-                <span>·</span>
-                <a
-                  href="/Aditya_MohanResume.pdf"
-                  download
-                  className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600"
-                >
-                  DOWNLOAD RESUME
-                </a>
               </div>
 
               <motion.p
@@ -49,11 +41,11 @@ const About = () => {
                 transition={{ delay: 0.2 }}
               >
                 Driven by a passion for innovation and a keen interest in
-                technology, I&apos;m Aditya Mohan, a Computer Science graduate
-                student at Georgia State University. With a strong foundation in
-                full-stack software development and a track record of leading
-                impactful projects, I&apos;m eager to contribute my skills and
-                expertise to a dynamic team.
+                technology, I&apos;m Aditya Mohan, a recent Computer Science
+                graduate from Georgia State University. With a strong foundation
+                in full-stack software development and a proven record of
+                leading impactful projects, I&apos;m excited to bring my skills
+                and expertise to a dynamic team.
               </motion.p>
 
               <SocialLinks />

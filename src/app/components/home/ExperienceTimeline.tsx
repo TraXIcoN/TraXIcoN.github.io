@@ -80,10 +80,10 @@ const experiences: ExperienceItem[] = [
     isRight: true,
     duration: "Jun 2022 - Jul 2023",
     description: [
-      "Designed scalable data pipelines for retail analytics using Databricks",
-      "Optimized SQL workflows, reducing data processing time by 40%",
-      "Automated ETL workflows with Apache Airflow on Azure Cloud",
-      "Developed Power BI dashboards for real-time sales insights",
+      "Led the migration from Oracle SQL to Databricks, reducing infrastructure costs by approximately $200K annually",
+      "Optimized ETL pipelines and data schemas, reducing processing time by 40% and query execution by 36%, while improving scalability for high-throughput workloads",
+      "Formulated Git workflows processing 5TB+ of sales data across 100 regions, ensuring 92% pipeline reliability",
+      "Integrated Snowflake with SAP for real-time ETL workflows, optimizing data ingestion and transformation, cutting processing costs by 20%, and accelerating query performance by 35%",
     ],
     skills: [
       { name: "Azure", color: "blue" },
@@ -95,32 +95,12 @@ const experiences: ExperienceItem[] = [
   {
     number: 5,
     company: "CODES & COFFEE TECH",
-    position: "INTERN, MOBILE APP DEVELOPER",
-    duration: "FEB 2022 - May 2022",
+    position: "MOBILE APP DEVELOPER",
+    duration: "FEB 2021 - May 2022",
     description: [
-      "Led the migration from Oracle SQL to Databricks, reducing infrastructure costs by approximately $200K annually",
-      "Optimized ETL pipelines and data schemas, reducing processing time by 40% and query execution by 36%, while improving scalability for high-throughput workloads",
-      "Formulated Git workflows processing 5TB+ of sales data across 100 regions, ensuring 92% pipeline reliability",
-      "Integrated Snowflake with SAP for real-time ETL workflows, optimizing data ingestion and transformation, cutting processing costs by 20%, and accelerating query performance by 35%",
-    ],
-    skills: [
-      { name: "Python", color: "blue" },
-      { name: "Flask", color: "red" },
-      { name: "PostgreSQL", color: "orange" },
-      { name: "Elasticsearch", color: "green" },
-    ],
-  },
-  {
-    number: 6,
-    company: "AUTODL",
-    position: "INTERN, BACKEND DEVELOPER",
-    duration: "Dec 2021 - May 2022",
-    isRight: true,
-    description: [
-      "Developed RESTful APIs for an ML-based document labeling platform",
-      "Optimized API performance, reducing response times by 35%",
-      "Implemented role-based access control (RBAC) for enhanced security",
-      "Integrated Elasticsearch for fast and efficient document retrieval",
+      "Developed a Flutter-based inventory management app for a leading retail client, launching on Google Play Store and onboarding 100+ vendors within the first quarter",
+      "Implemented asynchronous programming techniques to optimise API response times resulting in a 40% faster data retrieval",
+      "Installed caching mechanisms using Redis for cost savings and used GraphQL to reduce API requests by almost 45%",
     ],
     skills: [
       { name: "Python", color: "blue" },

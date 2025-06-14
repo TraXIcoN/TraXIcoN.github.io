@@ -45,7 +45,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
 ];
 
-export const CONTACT_EMAIL = "AMOHAN2@STUDENT.GSU.EDU";
+export const CONTACT_EMAIL = "adityamohan1601@gmail.com";
 export const RESUME_LINK =
   "https://drive.google.com/file/d/1nFDMRJQp1Ux92vljv0hvKTymaz_FX1wP/view?usp=sharing";
 

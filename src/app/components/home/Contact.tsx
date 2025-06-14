@@ -181,7 +181,7 @@ const Contact = () => {
               size="lg"
               onClick={() =>
                 window.open(
-                  "mailto:amohan2@student.gsu.edu?subject=Let's%20Talk%20Tech%20Over%20Coffee"
+                  "mailto:adityamohan1601@gmail.com?subject=Let's%20Talk%20Tech%20Over%20Coffee"
                 )
               }
               className="bg-purple-600 hover:bg-purple-700 transform hover:scale-105

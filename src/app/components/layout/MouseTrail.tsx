@@ -21,7 +21,7 @@ export default function MouseTrail() {
 
     const handleMouseMove = (e: MouseEvent) => {
       positionsRef.current.push({ x: e.clientX, y: e.clientY, age: 0 });
-      if (positionsRef.current.length > 50) {
+      if (positionsRef.current.length > 5) {
         positionsRef.current.shift();
       }
     };
@@ -32,7 +32,7 @@ export default function MouseTrail() {
       // Update and filter positions
       positionsRef.current = positionsRef.current
         .map((pos) => ({ ...pos, age: pos.age + 1 }))
-        .filter((pos) => pos.age < 50); // Remove old points
+        .filter((pos) => pos.age < 5); // Remove old points
 
       // Draw white glow
       ctx.beginPath();
@@ -67,8 +67,8 @@ export default function MouseTrail() {
       // Slight wobble effect
       positionsRef.current = positionsRef.current.map((pos) => ({
         ...pos,
-        x: pos.x + (Math.random() - 0.5) * 0.5,
-        y: pos.y + (Math.random() - 0.5) * 0.5,
+        x: pos.x + (Math.random() - 0.5) * 10,
+        y: pos.y + (Math.random() - 0.5) * 10,
       }));
 
       requestRef.current = requestAnimationFrame(animate);
